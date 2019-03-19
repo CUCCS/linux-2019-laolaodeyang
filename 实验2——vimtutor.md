@@ -16,7 +16,8 @@
    sudo apt-get update
    sudo apt-get install asciinema
    ```
-根据自己尝试，仅```sudo apt-get install 在asciinema```即可
+根据自己尝试，仅```sudo apt-get install asciinema```即可
+[![安装](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C2%E2%80%94%E2%80%94%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/%E5%AE%89%E8%A3%85asciinema.png)
 
 + 关联账号
 ```asciinema auth```
@@ -27,7 +28,11 @@ asciinema rec
 #结束录制
 <ctrl-d> or type "exit"
 ```
+[![开始录制](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C2%E2%80%94%E2%80%94%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/%E5%BC%80%E5%A7%8B%E5%BD%95%E5%88%B6.png)
+[![结束录制](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C2%E2%80%94%E2%80%94%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/%E7%BB%93%E6%9D%9F%E5%BD%95%E5%88%B6%E5%B9%B6%E4%B8%8A%E4%BC%A0.png)
+
 ##### vimtutor操作录像
+[![asciicast](https://asciinema.org/a/4rSyvT4pKdX1BrhKm2oq0K5B7.svg)](https://asciinema.org/a/4rSyvT4pKdX1BrhKm2oq0K5B7)
 
 ##### asciinema的分享URL
 https://asciinema.org/a/4rSyvT4pKdX1BrhKm2oq0K5B7
