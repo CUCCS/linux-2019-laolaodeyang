@@ -32,10 +32,29 @@ asciinema rec
 [![结束录制](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C2%E2%80%94%E2%80%94%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/%E7%BB%93%E6%9D%9F%E5%BD%95%E5%88%B6%E5%B9%B6%E4%B8%8A%E4%BC%A0.png)
 
 ##### vimtutor操作录像
++ Lesson 1：
 [![asciicast](https://asciinema.org/a/4rSyvT4pKdX1BrhKm2oq0K5B7.svg)](https://asciinema.org/a/4rSyvT4pKdX1BrhKm2oq0K5B7)
++ Lesson 2：
+[![asciicast](https://asciinema.org/a/45tqBaWXp1OQcB2WAtowJonvQ.svg)](https://asciinema.org/a/45tqBaWXp1OQcB2WAtowJonvQ)
++ Lesson 3：
+[![asciicast](https://asciinema.org/a/j8xACrlJwgJkLnUD2rUues6rF.svg)](https://asciinema.org/a/j8xACrlJwgJkLnUD2rUues6rF)
++ Lesson 4：
+[![asciicast](https://asciinema.org/a/MTxyt4bjNWyD63Mv9Ci6cUDe7.svg)](https://asciinema.org/a/MTxyt4bjNWyD63Mv9Ci6cUDe7)
++ Lesson 5：
+[![asciicast](https://asciinema.org/a/2a9DSE8u4kscAtKz4LEvjJ796.svg)](https://asciinema.org/a/2a9DSE8u4kscAtKz4LEvjJ796)
++ Lesson 6：
+[![asciicast](https://asciinema.org/a/ySHG42HLBGtsbYylEHborIXjB.svg)](https://asciinema.org/a/ySHG42HLBGtsbYylEHborIXjB)
++ Lesson 7：
+[![asciicast](https://asciinema.org/a/loncaRLfP1cwvqOBa3BPhXQ60.svg)](https://asciinema.org/a/loncaRLfP1cwvqOBa3BPhXQ60)
 
 ##### asciinema的分享URL
-https://asciinema.org/a/4rSyvT4pKdX1BrhKm2oq0K5B7
++ https://asciinema.org/a/4rSyvT4pKdX1BrhKm2oq0K5B7
++ https://asciinema.org/a/45tqBaWXp1OQcB2WAtowJonvQ
++ https://asciinema.org/a/j8xACrlJwgJkLnUD2rUues6rF
++ https://asciinema.org/a/MTxyt4bjNWyD63Mv9Ci6cUDe7
++ https://asciinema.org/a/2a9DSE8u4kscAtKz4LEvjJ796
++ https://asciinema.org/a/ySHG42HLBGtsbYylEHborIXjB
++ https://asciinema.org/a/loncaRLfP1cwvqOBa3BPhXQ60
 
 ##### vimtutor完成后的自查清单
 1. vim的几种工作模式
