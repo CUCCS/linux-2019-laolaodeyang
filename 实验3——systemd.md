@@ -43,6 +43,7 @@ systemd-analyze critical-chain
 #显示指定服务的启动流
 systemd-analyze critical-chain atd.service
 ```
+[![asciicast](https://asciinema.org/a/mwxHkob41jqFRND3S79Gf8YrD.svg)](https://asciinema.org/a/mwxHkob41jqFRND3S79Gf8YrD)
 (3) hostnamectl
 hostnamectl命令用于查看当前主机的信息。
 ```
@@ -51,6 +52,7 @@ hostnamectl
 #设置主机名。
 sudo hostnamectl set-hostname ytq
 ```
+[![asciicast](https://asciinema.org/a/wDT5EJpKZ7VFfRsnTRoQCo6yC.svg)](https://asciinema.org/a/wDT5EJpKZ7VFfRsnTRoQCo6yC)
 (4) localectl
 localectl命令用于查看本地化设置。
 ```
@@ -60,6 +62,7 @@ localectl
 sudo localectl set-locale LANG=en_GB.utf8
 sudo localectl set-keymap en_GB
 ```
+[![asciicast](https://asciinema.org/a/NIfqhWtJ6lbwhjxg7wdlNIxEi.svg)](https://asciinema.org/a/NIfqhWtJ6lbwhjxg7wdlNIxEi)
 (5) timedatectl
 timedatectl命令用于查看当前时区设置。
 ```
@@ -72,6 +75,7 @@ sudo timedatectl set-timezone America/New_York
 sudo timedatectl set-time YYYY-MM-DD
 sudo timedatectl set-time HH:MM:SS
 ```
+[![asciicast](https://asciinema.org/a/NIfqhWtJ6lbwhjxg7wdlNIxEi.svg)](https://asciinema.org/a/NIfqhWtJ6lbwhjxg7wdlNIxEi)
 (6)  loginctl
 loginctl命令用于查看当前登录的用户。
 ```
@@ -82,6 +86,7 @@ loginctl list-users
 #列出显示指定用户的信息
 loginctl show-user ytq
 ```
+[![asciicast](https://asciinema.org/a/4vLTCdrrZPCsdkyCBM4MlymkC.svg)](https://asciinema.org/a/4vLTCdrrZPCsdkyCBM4MlymkC)
 3. Unit
 Systemd 可以管理所有系统资源。不同的资源统称为 Unit（单位）。
 Unit 一共分成12种:
@@ -111,6 +116,7 @@ systemctl list-units --failed
 #列出所有正在运行的、类型为 service 的 Unit
 systemctl list-units --type=service
 ```
+[![asciicast](https://asciinema.org/a/bn7ktwXt36kHWBLoreatDnTLt.svg)](https://asciinema.org/a/bn7ktwXt36kHWBLoreatDnTLt)
 (2) unit的状态
 systemctl status命令用于查看系统状态和单个 Unit 的状态。
 ```
@@ -130,6 +136,7 @@ systemctl is-failed application.service
 #显示某个 Unit 服务是否建立了启动链接
 systemctl is-enabled application.service
 ```
+[![asciicast](https://asciinema.org/a/mPdVc1pXn7nc5zQRSdkPG6XZJ.svg)](https://asciinema.org/a/mPdVc1pXn7nc5zQRSdkPG6XZJ)
 (3) Unit 管理
 对于用户来说，最常用的是下面这些命令，用于启动和停止 Unit（主要是 service）。
 ```
@@ -152,6 +159,7 @@ systemctl show -p CPUShares httpd.service
 # 设置某个 Unit 的指定属性
 sudo systemctl set-property httpd.service CPUShares=500
 ```
+[![asciicast](https://asciinema.org/a/SeB0ldTT7jfIBd5ci9HlcHcNM.svg)](https://asciinema.org/a/SeB0ldTT7jfIBd5ci9HlcHcNM)
 (4) 依赖关系
 Unit 之间存在依赖关系：A 依赖于 B，就意味着 Systemd 在启动 A 的时候，同时会去启动 B。
 systemctl list-dependencies命令列出一个 Unit 的所有依赖。
@@ -162,6 +170,7 @@ systemctl list-dependencies nginx.service
 ```
 systemctl list-dependencies --all nginx.service
 ```
+[![asciicast](https://asciinema.org/a/2hE5TAO8m9OT71lPSK8Y5epcD.svg)](https://asciinema.org/a/2hE5TAO8m9OT71lPSK8Y5epcD)
 4. unit的配置文件
 (1) 概述
 每一个 Unit 都有一个配置文件，告诉 Systemd 怎么启动这个 Unit 。
@@ -200,12 +209,14 @@ systemctl status bluetooth.service
 sudo systemctl daemon-reload
 sudo systemctl restart httpd.service
 ```
+[![asciicast](https://asciinema.org/a/xcKpaLBTcfs2wCE7rFlOXEVn3.svg)](https://asciinema.org/a/xcKpaLBTcfs2wCE7rFlOXEVn3)
 (3) 配置文件的格式
 配置文件就是普通的文本文件，可以用文本编辑器打开。
 systemctl cat命令可以查看配置文件的内容。
 ```
 systemctl cat atd.service
 ```
+[![asciicast](https://asciinema.org/a/uzzRUT7ca7iiB7gTQGDZzrPtX.svg)](https://asciinema.org/a/uzzRUT7ca7iiB7gTQGDZzrPtX)
 (4) 配置文件的区块
 [Unit]区块通常是配置文件的第一个区块，用来定义 Unit 的元数据，以及配置与其他 Unit 的关系。它的主要字段如下。
 ```
@@ -265,6 +276,7 @@ sudo systemctl set-default multi-user.target
 # 关闭前一个 Target 里面所有不属于后一个 Target 的进程
 sudo systemctl isolate multi-user.target
 ```
+[![asciicast](https://asciinema.org/a/EF9jcuD3OBzCEMzDSGjEW3fpO.svg)](https://asciinema.org/a/EF9jcuD3OBzCEMzDSGjEW3fpO)
 6. 日志管理
 Systemd 统一管理所有 Unit 的启动日志。带来的好处就是，可以只用journalctl一个命令，查看所有日志（内核日志和应用日志）。日志的配置文件是/etc/systemd/journald.conf。
 journalctl功能强大，用法非常多。
@@ -328,6 +340,7 @@ $ sudo journalctl --vacuum-size=1G
 # 指定日志文件保存多久
 $ sudo journalctl --vacuum-time=1years
 ```
+[![asciicast](https://asciinema.org/a/k4aTcOAllXu1p8i5VRpe2Zbcx.svg)](https://asciinema.org/a/k4aTcOAllXu1p8i5VRpe2Zbcx)
 7. 开机启动
 对于那些支持 Systemd 的软件，安装的时候，会自动在/usr/lib/systemd/system目录添加一个配置文件。
 如果你想让该软件开机启动，就执行下面的命令（以httpd.service为例）。
@@ -364,10 +377,12 @@ sudo systemctl kill httpd.service
 ```
 sudo systemctl restart httpd.service
 ```
+[![asciicast](https://asciinema.org/a/wWjItlpNltQjTnfYw0tbFUH6r.svg)](https://asciinema.org/a/wWjItlpNltQjTnfYw0tbFUH6r)
 10. 读懂配置文件
 一个服务怎么启动，完全由它的配置文件决定。下面就来看，配置文件有些什么内容。
 前面说过，配置文件主要放在/usr/lib/systemd/system目录，也可能在/etc/systemd/system目录。找到配置文件以后，使用文本编辑器打开即可。
 systemctl cat命令可以用来查看配置文件，下面以sshd.service文件为例，它的作用是启动一个 SSH 服务器，供其他用户以 SSH 方式登录。
+[![asciicast](https://asciinema.org/a/Zv5Y8qEFFw0H3K5POF6KPJ7Lx.svg)](https://asciinema.org/a/Zv5Y8qEFFw0H3K5POF6KPJ7Lx)
 ```
 $ systemctl cat sshd.service
 
@@ -493,7 +508,7 @@ systemctl list-dependencies multi-user.target
 sudo systemctl isolate shutdown.target
 ```
 一般来说，常用的 Target 有两个：一个是multi-user.target，表示多用户命令行状态；另一个是graphical.target，表示图形用户状态，它依赖于multi-user.target。官方文档有一张非常清晰的 Target 依赖关系图。
-
+[![asciicast](https://asciinema.org/a/ZF4647ieyXPXsNzEpU8QEzlNy.svg)](https://asciinema.org/a/ZF4647ieyXPXsNzEpU8QEzlNy)
 13. Target 的配置文件
 Target 也有自己的配置文件。
 ```
@@ -507,6 +522,7 @@ Conflicts=rescue.service rescue.target
 After=basic.target rescue.service rescue.target
 AllowIsolate=yes
 ```
+[![asciicast](https://asciinema.org/a/ygAf0G29Sa8g1F1b7Q2sTkVqX.svg)](https://asciinema.org/a/ygAf0G29Sa8g1F1b7Q2sTkVqX)
 注意，Target 配置文件里面没有启动命令。
 上面输出结果中，主要字段含义如下。
 ```
@@ -526,10 +542,64 @@ sudo systemctl restart foobar
 
 #### 自查清单
 + 如何添加一个用户并使其具备sudo执行程序的权限？
+```
+su root //进入root用户 
+vim /etc/sudoers //打开sudo的配置文件
+然后给普通用户kcc添加sudo权限，在“root ALL=(ALL)ALL”这一行下面，加入如下图所示的一行(用户名 ALL=(ALL) ALL)，并保存
+```
+[![asciicast](https://asciinema.org/a/dOZvDTlPWkuDp1HeZe497LP7I.svg)](https://asciinema.org/a/dOZvDTlPWkuDp1HeZe497LP7I)
 + 如何将一个用户添加到一个用户组？
+```
+# 创建这个用户组了
+groupadd test1
+# 然后创建用户 user2 并将其加入到 test1 用户组：
+useradd -G developers cnzhx
+# 为用户 user2 设置密码：
+passwd user2
+# 为确保已经将该用户正确的添加到 developers 用户组中，可以查看该用户的属性，使用 id 命令：
+id user2
+```
+[![asciicast](https://asciinema.org/a/atPx2hHWrwKITe8FSlTUty4gv.svg)](https://asciinema.org/a/atPx2hHWrwKITe8FSlTUty4gv)
 + 如何查看当前系统的分区表和文件系统详细信息？
+```
+# 查看系统分区表
++ lsblk
++ sudo fdisk -l
++ fdisk -l /dev/sda
++ sudo sfdisk -l /dev/sda
++ sudo parted /dev/sda后print
+```
+[![asciicast](https://asciinema.org/a/IyQFsDmOckipyBmuae9bfows2.svg)](https://asciinema.org/a/IyQFsDmOckipyBmuae9bfows2)
+```
+# 查看文件系统详细信息
++ sudo parted -l
++ df -T -h  查看挂载的文件系统类型
++ mount 
+```
+[![asciicast](https://asciinema.org/a/uvLpUk6TBn8mDAzqUKv68T6xy.svg)](https://asciinema.org/a/uvLpUk6TBn8mDAzqUKv68T6xy)
 + 如何实现开机自动挂载Virtualbox的共享目录分区？
+```
+1.点击共享文件夹设置框，右上角的添加按钮,新建共享文件夹sharing
+2.选择之前本机设置的共享文件夹，此时一定不可以勾选自动挂载
+3.设置好共享名后，进入Ubuntu系统，打开终端，先执行mkdir命令，在挂载点目录添加“share”目录，接着执行"mount -t vboxsf sharing /mnt/share/"
+4.设置自动挂载，重启虚拟机系统共享仍在：
+在文件 /etc/rc.local 中（用root用户）追加如下命令
+mount -t vboxsf sharing /mnt/share/
+```
 + 基于LVM（逻辑分卷管理）的分区如何实现动态扩容和缩减容量？
+https://blog.csdn.net/seteor/article/details/6708025
+<<Linux中利用LVM实现分区动态扩容>>
 + 如何通过systemd设置实现在网络连通时运行一个指定脚本，在网络断开时运行另一个脚本？
+```
+# 修改脚本文件的Unit区块
+# 利用after字段，在network.target网络连通后启动
+# 利用require强依赖关系，在网络断开时，强制退出该脚本
+```
 + 如何通过systemd设置实现一个脚本在任何情况下被杀死之后会立即重新启动？实现杀不死？
+```
+# 利用脚本文件中的service区块中的重启行为
+# restart字段设置为always不管是什么退出原因，总是重启
+```
 #### 参考资料
+http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-part-two.html
+http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html
