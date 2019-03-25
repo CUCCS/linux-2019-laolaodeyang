@@ -33,28 +33,28 @@ asciinema rec
 
 ##### vimtutor操作录像
 + Lesson 1：
-[![asciicast](https://asciinema.org/a/4rSyvT4pKdX1BrhKm2oq0K5B7.svg)](https://asciinema.org/a/4rSyvT4pKdX1BrhKm2oq0K5B7)
+[![asciicast](https://asciinema.org/a/QPnEUsNWXewBXebVCjYiLbRzJ.svg)](https://asciinema.org/a/QPnEUsNWXewBXebVCjYiLbRzJ)
 + Lesson 2：
-[![asciicast](https://asciinema.org/a/45tqBaWXp1OQcB2WAtowJonvQ.svg)](https://asciinema.org/a/45tqBaWXp1OQcB2WAtowJonvQ)
+[![asciicast](https://asciinema.org/a/tIvqdZxVFXcCEUWWLWLHWiAnw.svg)](https://asciinema.org/a/tIvqdZxVFXcCEUWWLWLHWiAnw)
 + Lesson 3：
-[![asciicast](https://asciinema.org/a/j8xACrlJwgJkLnUD2rUues6rF.svg)](https://asciinema.org/a/j8xACrlJwgJkLnUD2rUues6rF)
+[![asciicast](https://asciinema.org/a/H32SQMd7sjkw4i80yNbXu5OXf.svg)](https://asciinema.org/a/H32SQMd7sjkw4i80yNbXu5OXf)
 + Lesson 4：
-[![asciicast](https://asciinema.org/a/MTxyt4bjNWyD63Mv9Ci6cUDe7.svg)](https://asciinema.org/a/MTxyt4bjNWyD63Mv9Ci6cUDe7)
+[![asciicast](https://asciinema.org/a/bEIvFc0rvtd6YUsbVvs3wrPzy.svg)](https://asciinema.org/a/bEIvFc0rvtd6YUsbVvs3wrPzy)
 + Lesson 5：
-[![asciicast](https://asciinema.org/a/2a9DSE8u4kscAtKz4LEvjJ796.svg)](https://asciinema.org/a/2a9DSE8u4kscAtKz4LEvjJ796)
+[![asciicast](https://asciinema.org/a/xwWXzV6YM4eoNR4DW2BCDwMUm.svg)](https://asciinema.org/a/xwWXzV6YM4eoNR4DW2BCDwMUm)
 + Lesson 6：
-[![asciicast](https://asciinema.org/a/ySHG42HLBGtsbYylEHborIXjB.svg)](https://asciinema.org/a/ySHG42HLBGtsbYylEHborIXjB)
+[![asciicast](https://asciinema.org/a/PBUWU7tHdQo5xB4Gh6NxQEma9.svg)](https://asciinema.org/a/PBUWU7tHdQo5xB4Gh6NxQEma9)
 + Lesson 7：
-[![asciicast](https://asciinema.org/a/loncaRLfP1cwvqOBa3BPhXQ60.svg)](https://asciinema.org/a/loncaRLfP1cwvqOBa3BPhXQ60)
+[![asciicast](https://asciinema.org/a/n9rXXaGsUQSs7YS0YtYTgGdro.svg)](https://asciinema.org/a/n9rXXaGsUQSs7YS0YtYTgGdro)
 
 ##### asciinema的分享URL
-+ https://asciinema.org/a/4rSyvT4pKdX1BrhKm2oq0K5B7
-+ https://asciinema.org/a/45tqBaWXp1OQcB2WAtowJonvQ
-+ https://asciinema.org/a/j8xACrlJwgJkLnUD2rUues6rF
-+ https://asciinema.org/a/MTxyt4bjNWyD63Mv9Ci6cUDe7
-+ https://asciinema.org/a/2a9DSE8u4kscAtKz4LEvjJ796
-+ https://asciinema.org/a/ySHG42HLBGtsbYylEHborIXjB
-+ https://asciinema.org/a/loncaRLfP1cwvqOBa3BPhXQ60
++ https://asciinema.org/a/QPnEUsNWXewBXebVCjYiLbRzJ
++ https://asciinema.org/a/tIvqdZxVFXcCEUWWLWLHWiAnw
++ https://asciinema.org/a/H32SQMd7sjkw4i80yNbXu5OXf
++ https://asciinema.org/a/bEIvFc0rvtd6YUsbVvs3wrPzy
++ https://asciinema.org/a/xwWXzV6YM4eoNR4DW2BCDwMUm
++ https://asciinema.org/a/PBUWU7tHdQo5xB4Gh6NxQEma9
++ https://asciinema.org/a/n9rXXaGsUQSs7YS0YtYTgGdro
 
 ##### vimtutor完成后的自查清单
 1. vim的几种工作模式
