@@ -419,3 +419,72 @@ sudo systemctl restart nginx
 
 ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/adminpassword%E7%99%BB%E5%BD%95.png)
 
+##### 基本要求
++ 使用Wordpress搭建的站点对外提供访问的地址为： https://wp.sec.cuc.edu.cn
+```bash
+#修改/etc/nginx/sites-available/wp.sec.cuc.edu.cn的server_name
+server_name wp.sec.cuc.edu.cn
+```
+
+（图）
+
+```bash
+#在/etc/hosts中添加
+192.168.56.103 wp.sec.cuc.edu.cn
+```
+
+（图）
+
+```bash
+#在本机C:\windows\system32\dirvers\etc\hosts中添加
+192.168.56.103 wp.sec.cuc.edu.cn
+```
+   + 通过域名访问成功
+（图）
+
++ 使用Damn Vulnerable Web Application (DVWA)搭建的站点对外提供访问的地址为： http://dvwa.sec.cuc.edu.cn
+```bash
+#修改/etc/nginx/sites-available/dvwa的server_name
+server_name dvwa.sec.cuc.edu.cn
+```
+
+（图）
+
+```bash
+#在/etc/hosts中添加
+192.168.56.103 dvwa.sec.cuc.edu.cn
+```
+
+(图)
+
+```bash
+#在本机C:\windows\system32\dirvers\etc\hosts中添加
+192.168.56.103 dvwa.sec.cuc.edu.cn
+```
+
+（图）
+
+   + 通过域名访问成功
+   （图）
+
++ 反向代理
+设置如图
+（两张）
+再次尝试，不添加端口也可访问
+（两张）
+
+##### 安全加固要求
++ 使用IP地址方式均无法访问上述任意站点，并向访客展示自定义的友好错误提示信息页面-1
+   + matcher
+   （图）
+   + response
+   （图）
+   + filter
+   （图）
+   + 实验结果
+   （图）
++ Damn Vulnerable Web Application (DVWA)只允许白名单上的访客来源IP，其他来源的IP访问均向访客展示自定义的友好错误提示信息页面-2
+
+   
+
+
