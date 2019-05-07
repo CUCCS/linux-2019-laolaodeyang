@@ -43,6 +43,9 @@ sudo ufw app list
 + Nginx HTTP
 + Nginx HTTPS
 + OpenSSH
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E8%B0%83%E6%95%B4%E9%98%B2%E7%81%AB%E5%A2%99.png )
+
 ```bash
 sudo ufw allow 'Nginx HTTP'
 sudo ufw allow 'Nginx HTTPS'
@@ -53,14 +56,23 @@ sudo ufw enable
 sudo ufw status
 ```
 可以看到允许通过的服务有哪些：
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E9%98%B2%E7%81%AB%E5%A2%99%E7%8A%B6%E6%80%81.png )
+
 3. 检查web服务器是否正在运行
 ```bash
 sudo systemctl status nginx
 ```
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E6%A3%80%E6%9F%A5web%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%98%AF%E5%90%A6%E5%9C%A8%E8%BF%90%E8%A1%8C.png )
+
 4. 访问默认网页
 ```bash
 192.168.56.101
 ```
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E6%88%90%E5%8A%9F%E8%AE%BF%E9%97%AEnginx.png )
+
 
 二、安装verynginx
 ```bash
@@ -76,13 +88,15 @@ cd VeryNginx
 sudo python install.py install
 ```
 
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E6%88%90%E5%8A%9F%E4%B8%8B%E8%BD%BDverynginx.png)
+
 ```bash
 #更改端口，以免同时占用80端口
 sudo vim /opt/verynginx/openresty/nginx/conf/nginx.conf
 #将监听端口改为8080
 ```
 
-相关命令
++ 相关命令
 ```bash
 #启动服务
 /opt/verynginx/openresty/nginx/sbin/nginx
@@ -96,6 +110,8 @@ sudo vim /opt/verynginx/openresty/nginx/conf/nginx.conf
 
 在浏览器中输入```https://192.168.56.101/verynginx/index.html```出现如下界面访问成功
 初始账号密码为```verynginx/verynginx```
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E6%88%90%E5%8A%9F%E8%AE%BF%E9%97%AEverynginx.png)
 
 三、基于LEMP安装wordpress
 
@@ -122,6 +138,9 @@ mysql>FLUSH PRIVILEGES;
 mysql>EXIT;
 ```
 
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E5%88%9B%E5%BB%BAwordpress%E6%95%B0%E6%8D%AE%E5%BA%93.png)
+
+
 2. 安装php以及相关依赖
 ```bash
 sudo apt-get update
@@ -135,6 +154,9 @@ sudo apt-get install php-curl php-gd php-intl php-mbstring php-soap php-xml php-
 #重启php
 sudo systemctl restart php7.2-fpm
 ```
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E4%B8%8B%E8%BD%BDphp.png)
+
 
 3. 下载wordpress
 ```bash
@@ -158,6 +180,10 @@ sudo cp -a /tmp/wordpress/. /var/www/html/wq.sec.cuc.edu.cn
 #分配文件所有权给www-data用户和组
 sudo chown -R www-data:www-data /var/www/wordpress
 ```
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E4%B8%8B%E8%BD%BDwordpress.png)
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E6%8E%88%E6%9D%83.png)
+
 
 4. 配置nginx
 ```bash
@@ -203,10 +229,15 @@ server {
 root /var/www/html/wp.sec.cuc.edu.cn;
 
 #修改server name
-server_name 192.168.56.101;
+server_name 192.168.56.103;
 
 #保存退出
 ```
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E5%A2%9E%E5%8A%A0location.png)
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E5%A2%9E%E5%8A%A0location2.png)
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E6%9B%B4%E6%94%B9.png)
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E4%BF%AE%E6%94%B9%E6%A0%B9%E7%9B%AE%E5%BD%95.png)
 
 + 创建软连接
 ```bash
@@ -221,18 +252,25 @@ sudo unlink /etc/nginx/sites-enabled/default
 ```bash
 sudo nginx -t
 ```
-无误
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E9%94%99%E8%AF%AF.png)
 
 + 重新加载nginx
 ```bash
 sudo systemctl reload nginx
 ```
 报错
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/fail%E4%BF%A1%E6%81%AF.png)
+
 ```bash
 #查看错误原因
 sudo systemctl status nginx.service
 ```
 原来是空格害人，更正错误后重启成功
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E5%8E%BB%E6%8E%89%E7%A9%BA%E6%A0%BC.png)
+
 
 5. 设置wordpress配置文件
 + 从wordpress密钥生成器中获取安全值
@@ -242,12 +280,17 @@ curl -s https://api.wordpress.org/secret-key/1.1/salt/
 
 获得如下
 
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E7%94%9F%E6%88%90%E7%A7%98%E9%92%A5.png)
+
 + 打开wordpress配置文件
 ```bash
 sudo nano /var/www/html/wp.sec.cuc.edu.cn/wp-config.php
 ```
 
 + 将文件中相应部分替换
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E5%A4%8D%E5%88%B6%E7%A7%98%E9%92%A5.png)
+
 + 修改开头部分数据
 ```bash
 define('DB_NAME', 'wordpress');
@@ -259,9 +302,19 @@ define('DB_PASSWORD', 'password');
 define('FS_METHOD', 'direct');
 ```
 
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E4%BF%A1%E6%81%AF.png)
+
+
 6. 通过web界面完成安装
 + 在浏览器中，输入```192.168.56.103:8080```
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E6%88%90%E5%8A%9F%E8%AE%BF%E9%97%AEwordpress.png)
+
 + 选择语言，进行设置，完成登录
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/wp%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2.png)
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E6%88%90%E5%8A%9F%E7%99%BB%E5%BD%95wp.png)
+
 
 四、安装dvwa
 + 参考资料：https://kifarunix.com/how-to-setup-damn-vulnerable-web-app-lab-on-ubuntu-18-04-server/
@@ -277,6 +330,9 @@ git clone https://github.com/ethicalhack3r/DVWA /tmp/DVWA
 # 将安装文件拷贝到/var/www/html/DVWA网站根目录下
 sudo rsync -avP /tmp/DVWA/ /var/www/html/DVWA
 ```
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E4%B8%8B%E8%BD%BDdvwa.png)
+
 
 * 配置dvwa
 + 配置数据库
@@ -302,6 +358,9 @@ exit；
 sudo systemctl restart mysql
 ```
 
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E5%88%9B%E5%BB%BAdvwa%E6%95%B0%E6%8D%AE%E5%BA%93.png)
+
+
 + 修改dvwa配置文件
 ```bash
 sudo sudo vim /var/www/html/DVWA/config/config.inc.php
@@ -312,6 +371,8 @@ $_DVWA[ 'db_database' ] = 'dvwa';
 $_DVWA[ 'db_user' ]     = 'dvwauser';
 $_DVWA[ 'db_password' ] = 'p@ssw0rd';
 ```
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BF%A1%E6%81%AF.png)
 
 + 配置php文件
 ```bash
@@ -345,3 +406,16 @@ sudo ln -s /etc/nginx/sites-available/dvwa /etc/nginx/sites-enabled/
 # 重启nginx
 sudo systemctl restart nginx
 ```
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E7%9B%91%E5%90%AC%E7%AB%AF%E5%8F%A3%E4%BF%AE%E6%94%B9.png)
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/dvwa%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%BF%AE%E6%94%B9.png)
+
++ 访问dvwa
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E6%88%90%E5%8A%9F%E8%AE%BF%E9%97%AEdvwa.png)
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E7%99%BB%E5%BD%95.png)
+
+以admin/password登录
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/adminpassword%E7%99%BB%E5%BD%95.png)
+
