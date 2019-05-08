@@ -112,6 +112,7 @@ sudo vim /opt/verynginx/openresty/nginx/conf/nginx.conf
 初始账号密码为```verynginx/verynginx```
 
 ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E6%88%90%E5%8A%9F%E8%AE%BF%E9%97%AEverynginx.png)
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/verynginx%E6%97%B6%E4%BA%8B%E4%BA%A4%E4%BA%92.png)
 
 三、基于LEMP安装wordpress
 
@@ -426,21 +427,22 @@ sudo systemctl restart nginx
 server_name wp.sec.cuc.edu.cn
 ```
 
-（图）
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/server_name%20wp.png)
 
 ```bash
 #在/etc/hosts中添加
 192.168.56.103 wp.sec.cuc.edu.cn
 ```
 
-（图）
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/hosts_wp.png)
 
 ```bash
 #在本机C:\windows\system32\dirvers\etc\hosts中添加
 192.168.56.103 wp.sec.cuc.edu.cn
 ```
    + 通过域名访问成功
-（图）
+
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/wp.sec.cuc.edu.cn8080.png)
 
 + 使用Damn Vulnerable Web Application (DVWA)搭建的站点对外提供访问的地址为： http://dvwa.sec.cuc.edu.cn
 ```bash
@@ -448,43 +450,160 @@ server_name wp.sec.cuc.edu.cn
 server_name dvwa.sec.cuc.edu.cn
 ```
 
-（图）
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/server_name%20dvwa.png)
 
 ```bash
 #在/etc/hosts中添加
 192.168.56.103 dvwa.sec.cuc.edu.cn
 ```
 
-(图)
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/hosts_dvwa.png)
 
 ```bash
 #在本机C:\windows\system32\dirvers\etc\hosts中添加
 192.168.56.103 dvwa.sec.cuc.edu.cn
 ```
 
-（图）
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/windows.png)
 
    + 通过域名访问成功
-   （图）
+   
+![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/dvwa.sec.cuc.edu.cn8088.png)
 
 + 反向代理
-设置如图
-（两张）
-再次尝试，不添加端口也可访问
-（两张）
+   +设置如图
+
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/dvwa%E5%92%8Cwp%E5%8F%8D%E5%90%91.png)
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/wp%E5%92%8Cdvwa.png)
+
+   + 再次尝试，不添加端口也可访问
+
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E9%80%9A%E8%BF%87%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEwp%E6%88%90%E5%8A%9F.png)
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E9%80%9A%E8%BF%87%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEdvwa%E6%88%90%E5%8A%9F.png)
+
 
 ##### 安全加固要求
 + 使用IP地址方式均无法访问上述任意站点，并向访客展示自定义的友好错误提示信息页面-1
    + matcher
-   （图）
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E9%98%BB%E6%AD%A2ip.png)
+   
    + response
-   （图）
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/ip%E5%9B%9E%E5%BA%94.png)
+   
    + filter
-   （图）
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/ip%E8%BF%9E%E6%8E%A5.png)
+   
    + 实验结果
-   （图）
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/%E4%BD%BF%E7%94%A8ip%E8%AE%BF%E9%97%AE%E9%98%BB%E6%8C%A1.png)
+   
 + Damn Vulnerable Web Application (DVWA)只允许白名单上的访客来源IP，其他来源的IP访问均向访客展示自定义的友好错误提示信息页面-2
+   + matcher
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/dvwa_wl-matcher.PNG)
+   
+   + response
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/dvwa_wl-response.PNG)
+   
+   + filter
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/dvwa_wl-filter.PNG)
+   
+   + 实验结果
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/whitelist-no%20permission.PNG)
+   
++ 在不升级Wordpress版本的情况下，通过定制VeryNginx的访问控制策略规则，热修复WordPress < 4.7.1 - Username Enumeration
+   + 配置访问/wp-json/wp/v2/users/可以获取wordpress用户信息的json数据，禁止访问·wp.sec.cuc.edu.cn站点的/wp-json/wp/v2/users/路径
+   + matcher
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/wp_matcher.png)
+   
+   + response
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/wp_response.png)
+   
+   + filter
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/wp_filter.png)
+   
+   + 实验结果 访问```wp.sec.cuc.edu.cn/wp-json/wp/v2/users/```
+
++ 通过配置VeryNginx的Filter规则实现对Damn Vulnerable Web Application (DVWA)的SQL注入实验在低安全等级条件下进行防护
+   + 将dvwa安全等级调整为low
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/dvwa%E5%AE%89%E5%85%A8%E7%AD%89%E7%BA%A7.png)
+   
+   + matcher
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/dvwa_sql_matcher.png)
+   
+   + resopnse
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/dvwa_sql_respnse.png)
+   
+   + filter
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/dvwa_sql_filter.png)
+   
+   + sql注入实验结果
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/dvwa_sql%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C.png)
+   
+##### VERYNGINX配置要求
++ VeryNginx的Web管理页面仅允许白名单上的访客来源IP，其他来源的IP访问均向访客展示自定义的友好错误提示信息页面-3
+   + matcher
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/vn_whitelist_matcher.PNG)
+   
+   + reponse
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/vn_whitelist_matcher.PNG)
+   
+   + filter
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/vn_whitelist_filter.PNG)
+   
+   + 不在白名单的ip地址可以访问，在白名单的地址不可以访问
+   
++ 通过定制VeryNginx的访问控制策略规则实现：
+   + 限制DVWA站点的单IP访问速率为每秒请求数 < 50
+   + 限制Wordpress站点的单IP访问速率为每秒请求数 < 20
+   + 超过访问频率限制的请求直接返回自定义错误提示信息页面-4
+   （1）frenquency limit
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/frequencylimit.png)
+   
+   （2）response
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/frequencylimitres.png)
+   
+   （3）结果
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/dvwalenonsucceed.png)
+   
+   （4）```sudo apt install apache2-utils```安装apache2-utils，执行```ab -c 30 -n 53 http://dvwa.sec.cuc.edu.cn/```,执行```ab -c 10 -n 23 http://wp.sec.cuc.edu.cn/```
+   
+   + 禁止curl访问
+   （1）matcher
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/curldisabledm_matcher.png)
+   
+   （2）filter
+   
+   ![](https://github.com/CUCCS/linux-2019-laolaodeyang/blob/%E5%AE%9E%E9%AA%8C5%E2%80%94web/curldisabled_filter.png)
+   
+   （3）结果执行```curl -v http://dvwa.sec.cuc.edu.cn```
+   
+##### 参考资料
++ https://github.com/CUCCS/linux-2019-MrCuihi/blob/chap0x05/Linux%E7%B3%BB%E7%BB%9F%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/chap0x05/chap0x05%20web%20server.md
++ https://github.com/CUCCS/linux-2019-luyj/blob/Linux_exp0x05/Linux_exp0x05/Linux_exp0x05.md
 
    
-
-
+   
+   
+   
